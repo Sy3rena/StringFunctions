@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include <assert.h>
 
 class fn
 {
@@ -48,7 +49,7 @@ class fn
 
             for(int i = 0; i != str.length(); i++)
             {
-                if(str[i] == DeleteChars) 
+                if(str[i] == DeleteChars)
                 {
                     continue;
                 }
@@ -60,6 +61,15 @@ class fn
             }
 
             return FullString;
+        }
+
+        int len(const char* str)
+        {
+            assert(str != NULL);
+            int num = 0;
+            for(int i = 0; str[i] < '\0'; ++i) num++;
+
+            return num;
         }
 };
 
